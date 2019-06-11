@@ -1,0 +1,16 @@
+{
+  "scripts": {
+    "dev": "gulp dev"
+  },
+  "devDependencies": {
+    "gulp": "^4.0.2",
+    "rollup": "^1.14.6",
+    "rollup-plugin-conditional": "^3.1.2",
+    "rollup-plugin-minify-es": "^1.1.1",
+    "rollup-plugin-node-resolve": "^5.0.1",
+    "uglify-es": "^3.3.9"
+  },
+  "dependencies": {
+    "lit-element": "^2.1.0"
+  }
+}
