@@ -55,6 +55,16 @@ class TvApp extends LitElement {
           </select> + <input type="text" name="hideAllDrawingTools" value=${this._getShortCutKey('hideAllDrawingTools')}>
         </div>
 
+        <div>
+          Remove All Drawing Tools
+        </div>
+        <div>
+          <select name="removeAllShapesModifier" @change=${this._saveShortcuts}>
+            <option value="alt" ?selected=${this._shortCutModEq('removeAllShapes', 'alt')}>alt</option>
+            <option value="ctrl" ?selected=${this._shortCutModEq('removeAllShapes', 'ctrl')}>ctrl</option>
+          </select> + <input type="text" name="removeAllShapes" value=${this._getShortCutKey('removeAllShapes')}>
+        </div>
+
         ${this.tools.map(tool => html`
           <div>
             ${tool.label}

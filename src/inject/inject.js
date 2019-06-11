@@ -134,6 +134,10 @@ setTimeout(function() {
       hideAllDrawingTools.setValue(!hideAllDrawingTools.value());
     }
 
+    if (action === 'removeAllShapes') {
+      window.TradingViewApi.activeChart().removeAllShapes();
+    }
+
     if (tools.has(action)) {
       window.TradingViewApi.selectLineTool(action);
     }
