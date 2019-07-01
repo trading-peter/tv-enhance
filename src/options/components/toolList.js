@@ -73,7 +73,9 @@ export const toolList = [
   { action: 'brush', label: 'brush' },
   { action: 'eraser', label: 'eraser' },
   { action: 'measure', label: 'measure' },
-  { action: 'zoom', label: 'zoom' }
+  { action: 'zoom', label: 'zoom' },
+  { action: 'cursor', label: 'cursor' },
+  { action: 'dot', label: 'dot' },
 ].sort((a, b) => {
   const lA = a.label.toUpperCase();
   const lB = b.label.toUpperCase();

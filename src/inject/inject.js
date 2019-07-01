@@ -81,7 +81,9 @@ setTimeout(function() {
     'brush',
     'eraser',
     'measure',
-    'zoom'
+    'zoom',
+    'cursor',
+    'dot'
   ]);
 
   const wv = {
