@@ -69,5 +69,20 @@ export const toolList = [
   { action: 'projection', label: 'projection' },
   { action: 'forecast', label: 'forecast' },
   { action: 'ghost_feed', label: 'ghost_feed' },
-  { action: 'bars_pattern', label: 'bars_pattern' }
-];
+  { action: 'bars_pattern', label: 'bars_pattern' },
+  { action: 'brush', label: 'brush' },
+  { action: 'eraser', label: 'eraser' },
+  { action: 'measure', label: 'measure' },
+  { action: 'zoom', label: 'zoom' }
+].sort((a, b) => {
+  const lA = a.label.toUpperCase();
+  const lB = b.label.toUpperCase();
+  if (lA < lB) {
+    return -1;
+  }
+  if (lA > lB) {
+    return 1;
+  }
+
+  return 0;
+});

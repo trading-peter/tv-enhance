@@ -77,7 +77,11 @@ setTimeout(function() {
     'projection',
     'forecast',
     'ghost_feed',
-    'bars_pattern'
+    'bars_pattern',
+    'brush',
+    'eraser',
+    'measure',
+    'zoom'
   ]);
 
   const wv = {

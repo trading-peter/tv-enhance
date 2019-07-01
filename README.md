@@ -14,3 +14,7 @@ Load the project as an unpacked extension in Chrome.
 
 ## How to contribute
 PRs very welcome
+
+- Fork
+- Make your changes in a new branch
+- Send a PR
