@@ -1,6 +1,6 @@
 {
   "name": "TV Enhance",
-  "version": "0.0.4",
+  "version": "0.0.5",
   "manifest_version": 2,
   "description": "Chrome Extension to make working with TradingView charts a little bit more intuitive.",
   "homepage_url": "https://github.com/pkaske/tv-enhance",

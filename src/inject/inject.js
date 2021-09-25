@@ -121,6 +121,11 @@ setTimeout(function() {
         mod.ctrl = false;
     }
   };
+
+  window.TradingViewApi.subscribe('onPlusClick', e => {
+    navigator.clipboard.writeText(e.price);
+  });
+
   document.addEventListener('tvh_shortcuts', e => {
     shortcuts = e.detail;
     window.removeEventListener('keydown', keydownListener, true);
