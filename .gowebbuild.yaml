@@ -1,0 +1,32 @@
+- esbuild:
+    entryPoints:
+        - ./src/options/components/tv-app.js
+    outdir: ./src/options/dist
+    outfile: ""
+    sourcemap: 1
+    format: 3
+    splitting: true
+    platform: 0
+    bundle: true
+    write: true
+    logLevel: 3
+    purgeBeforeBuild: false
+  watch:
+    paths:
+        - ./src
+    exclude: []
+  serve:
+    path: ""
+    port: 0
+  copy:
+    - src: ./frontend/index.html
+      dest: ./src/options/dist
+  download: []
+  replace: []
+  link:
+    from: ""
+    to: ""
+  productionBuildOptions:
+    cmdPostBuild: "./pack.sh"
+  npm_proxy:
+    overrides: []

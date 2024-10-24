@@ -94,6 +94,11 @@ setTimeout(function() {
   const keydownListener = e => {
     if (e.keyCode === 18) {
       mod.alt = true;
+
+      // Reset the state of the alt key after 5 seconds to prevent weird behavior when the user switches between applications using alt+tab.
+      setTimeout(() => {
+        mod.alt = false;
+      }, 5000);
       return;
     }
 

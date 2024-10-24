@@ -1,7 +1,7 @@
 {
   "name": "TV Enhance",
-  "version": "0.0.5",
-  "manifest_version": 2,
+  "version": "1.0.0",
+  "manifest_version": 3,
   "description": "Chrome Extension to make working with TradingView charts a little bit more intuitive.",
   "homepage_url": "https://github.com/pkaske/tv-enhance",
   "icons": {
@@ -11,8 +11,7 @@
   },
   "default_locale": "en",
   "background": {
-    "page": "src/bg/background.html",
-    "persistent": false
+    "page": "src/bg/background.html"
   },
   "options_page": "src/options/index.html",
   "permissions": [
@@ -31,6 +30,9 @@
     }
   ],
   "web_accessible_resources": [
-    "src/inject/inject.js"
+    {
+      "resources": [ "src/inject/inject.js" ],
+      "matches": [ "https://www.tradingview.com/*" ]
+    }
   ]
 }

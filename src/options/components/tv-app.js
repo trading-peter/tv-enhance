@@ -1,16 +1,11 @@
 /**
 @license
-Copyright (c) 2019 Peter Kaske
+Copyright (c) 2024 Peter Kaske
 This program is available under Apache License Version 2.0
 */
 
-import { LitElement, html } from 'lit-element';
+import { LitElement, html } from 'lit';
 import { toolList } from './toolList.js';
-
-/**
-# tv-app
-
-*/
 
 class TvApp extends LitElement {
   render() {
