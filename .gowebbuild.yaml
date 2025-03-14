@@ -13,7 +13,7 @@
     purgeBeforeBuild: false
   watch:
     paths:
-        - ./src
+        - ./src/options
     exclude: []
   serve:
     path: ""
@@ -30,3 +30,24 @@
     cmdPostBuild: "./pack.sh"
   npm_proxy:
     overrides: []
+- esbuild:
+    entryPoints:
+        - ./src/inject/inject.js
+    outdir: ./src/inject/dist
+    outfile: ""
+    sourcemap: 1
+    format: 3
+    splitting: true
+    platform: 0
+    bundle: true
+    write: true
+    logLevel: 3
+    purgeBeforeBuild: false
+  watch:
+    paths:
+        - ./src/inject
+    exclude: []
+  serve:
+    path: ""
+    port: 0
+  

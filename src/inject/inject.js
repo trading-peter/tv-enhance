@@ -1,3 +1,5 @@
+import { toolList } from "../options/components/toolList";
+
 setTimeout(function() {
   const mod = {
     alt: false,
@@ -6,85 +8,11 @@ setTimeout(function() {
 
   let shortcuts = {};
 
-  const tools = new Set([
-    'text',
-    'anchored_text',
-    'balloon',
-    'arrow_up',
-    'arrow_down',
-    'arrow_left',
-    'arrow_right',
-    'price_label',
-    'flag',
-    'xabcd_pattern',
-    'abcd_pattern',
-    'triangle_pattern',
-    '3divers_pattern',
-    'head_and_shoulders',
-    'cypher_pattern',
-    'elliott_impulse_wave',
-    'elliott_triangle_wave',
-    'elliott_triple_combo',
-    'elliott_correction',
-    'elliott_double_combo',
-    'cyclic_lines',
-    'time_cycles',
-    'sine_line',
-    'rectangle',
-    'rotated_rectangle',
-    'ellipse',
-    'triangle',
-    'polyline',
-    'curve',
-    'double_curve',
-    'arc',
-    'vertical_line',
-    'horizontal_line',
-    'cross_line',
-    'horizontal_ray',
-    'trend_line',
-    'trend_infoline',
-    'trend_angle',
-    'arrow',
-    'ray',
-    'extended',
-    'parallel_channel',
-    'disjoint_angle',
-    'flat_bottom',
-    'fib_spiral',
-    'pitchfork',
-    'schiff_pitchfork_modified',
-    'schiff_pitchfork',
-    'inside_pitchfork',
-    'pitchfan',
-    'gannbox_square',
-    'gannbox_fan',
-    'gannbox',
-    'fib_speed_resist_fan',
-    'fib_retracement',
-    'fib_trend_ext',
-    'fib_timezone',
-    'fib_trend_time',
-    'fib_circles',
-    'fib_speed_resist_arcs',
-    'fib_wedge',
-    'fib_channel',
-    'date_range',
-    'price_range',
-    'date_and_price_range',
-    'long_position',
-    'short_position',
-    'projection',
-    'forecast',
-    'ghost_feed',
-    'bars_pattern',
-    'brush',
-    'eraser',
-    'measure',
-    'zoom',
-    'cursor',
-    'dot'
-  ]);
+  const tools = new Set();
+
+  for (const tool of toolList) {
+    tools.add(tool.action);
+  }
 
   const wv = {
     magnetEnabled: window.TradingViewApi.magnetEnabled(),
@@ -131,6 +59,18 @@ setTimeout(function() {
     navigator.clipboard.writeText(e.price);
   });
 
+  window.TradingViewApi.activeChart().onSymbolChanged().subscribe(null, e => {
+    const symbol = e.full_name;
+  });
+
+  window.TradingViewApi.activeChart().onIntervalChanged().subscribe(null, e => {
+    const interval = e.interval;
+  });
+
+  window.TradingViewApi.activeChart().onVisibleRangeChanged().subscribe(null, e => {
+    
+  });
+
   document.addEventListener('tvh_shortcuts', e => {
     shortcuts = e.detail;
     window.removeEventListener('keydown', keydownListener, true);
@@ -154,6 +94,7 @@ setTimeout(function() {
       window.TradingViewApi.activeChart().removeAllShapes();
     }
 
+    console.log(action, tools);
     if (tools.has(action)) {
       window.TradingViewApi.selectLineTool(action);
     }

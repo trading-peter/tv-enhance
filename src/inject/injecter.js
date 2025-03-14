@@ -8,7 +8,7 @@ function initShortcuts() {
 }
 
 const s = document.createElement('script');
-s.src = chrome.runtime.getURL('src/inject/inject.js');
+s.src = chrome.runtime.getURL('src/inject/dist/inject.js');
 s.onload = initShortcuts;
 
 setTimeout(() => {

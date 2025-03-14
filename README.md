@@ -5,10 +5,12 @@ Chrome Extension to make working with TradingView charts a little bit more intui
 So far you're able to set custom keyboard shortcuts for drawing tools and some chart settings.
 
 ## How to develop
-First install dependencies with `yarn install`.
+First install dependencies with `npm install`.
 
-There is a gulp script that builds the contents of the options page as soon as something changes.
-Run it with `npm run dev`.
+Install gowebbuild (`go install github.com/trading-peter/gowebbuild@latest`)
+You need to have a working Go installation for this.
+
+Run `gowebbuild` in the project root to build the extension.
 
 Load the project as an unpacked extension in Chrome.
 
